@@ -1,3 +1,4 @@
+import { Mail } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 export const Navbar: React.FC = () => {
@@ -22,7 +23,7 @@ export const Navbar: React.FC = () => {
     <div className="flex fixed w-full z-50 justify-center text-white mt-2">
       <div
         className={`${
-          strecth ? "w-6/12" : "w-10/12"
+          strecth ? "w-6/12" : "w-10/12"  
         } bg-black bg-opacity-90 transition-all duration-500 p-2 flex items-center justify-between h-fit`}
       >
         <div className="gap-2 flex justify-center items-center">
@@ -48,11 +49,7 @@ export const Navbar: React.FC = () => {
         <div className=" flex justify-center">
           <button className="px-4 py-2 bg-blue-500 hover:bg-blue-800 transition-all duration-500">
             {strecth ? (
-              <img
-                src="/icon.png"
-                alt="icon"
-                className="p-2 h-8 w-8 bg-white"
-              />
+              <Mail className="h-8 w-7" />
             ) : (
               "Send request"
             )}

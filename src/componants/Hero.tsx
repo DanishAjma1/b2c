@@ -2,7 +2,7 @@ import  { useEffect, useState } from "react";
 
 export const Hero:React.FC =()=> {
   const texts: string[] = [
-    "FUELING DIGITAL DISRUPTION ACROSS TRANSFORMATIVE DOMAINS",
+    "DYNAMIC, INTELLIGENT, RESOURCEFUL, POWERFUL",
     "CUSTOM SOFTWARE SOLUTIONS FOR BUSINESS GROWTH",
     "AI-DRIVEN, CLOUD-POWERED, INDUSTRY-CHANGING",
   ];
@@ -39,35 +39,28 @@ export const Hero:React.FC =()=> {
       {/* <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div> */}
 
-      <div className="container mx-auto px-10 relative z-10">
-        <div className="gap-4 items-center">
+      <div className="container flex justify-center  relative z-10">
+        <div className="gap-6 items-center w-10/12">
           {/* LEFT CONTENT */}
-          <div className="mt-24">
-            <h1 className=" font-custom text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              
-              <span
-                className={`block text-blue-300 mt-2 transition-opacity duration-500 ${
-                  fade ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                {texts[index]}
-              </span>
-            </h1>
+          <div className="mt-24 ">
+           <h1 className="font- text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight min-h-[6rem]">
+  <span
+    className={`block text-blue-300 transition-opacity duration-500 ${
+      fade ? "opacity-100" : "opacity-0"
+    }`}
+  >
+    {texts[index]}
+  </span>
+</h1>
+
 
             
 
             {/* CTA BUTTONS */}
-            <div className=" flex flex-col sm:flex-row gap-4">
+            <div className=" flex flex-col sm:flex-row gap-4 ">
               <a
                 href="/contact"
-                className="font-st px-7 py-2 bg-blue-500 hover:bg-blue-800 transition-all duration-500"
-              >
-                Let's Talk
-              </a>
-
-                <a
-                href="/contact"
-                className="px-7 py-2 bg-blue-500 hover:bg-blue-800 transition-all duration-500"
+                className="font-serif px-10 py-2 bg-blue-500 hover:bg-blue-800 transition-all duration-500"
               >
                 Let's Talk
               </a>
