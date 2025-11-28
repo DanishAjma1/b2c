@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 
 export const Hero:React.FC =()=> {
   const texts: string[] = [
-    "Powered by Innovation",
-    "Built for Your Success",
-    "Engineering Your Vision",
+    "FUELING DIGITAL DISRUPTION ACROSS TRANSFORMATIVE DOMAINS",
+    "CUSTOM SOFTWARE SOLUTIONS FOR BUSINESS GROWTH",
+    "AI-DRIVEN, CLOUD-POWERED, INDUSTRY-CHANGING",
   ];
 
   const [index, setIndex] = useState<number>(0);
@@ -23,28 +23,28 @@ export const Hero:React.FC =()=> {
   }, [texts.length]);
 
   return (
-    <section className="relative pt-32 pb-20 bg-black overflow-hidden">
+    <section className="relative pt-32 pb-20 bg-black overflow-hidden h-screen ">
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
+        className="absolute inset-0 w-full h-full object-cover opacity-95"
       >
-        <source src="/bg-video.mp4" type="video/mp4" />
+        <source src="/main-video-mp4.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-[#1B3C53]"></div>
+      {/* <div className="absolute inset-0 bg-[#1B3C53]"></div> */}
 
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div>
+      {/* <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div> */}
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-10 relative z-10">
+        <div className="gap-4 items-center">
           {/* LEFT CONTENT */}
-          <div>
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Custom Software Development
+          <div className="mt-24">
+            <h1 className=" font-custom text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              
               <span
                 className={`block text-blue-300 mt-2 transition-opacity duration-500 ${
                   fade ? "opacity-100" : "opacity-0"
@@ -54,31 +54,27 @@ export const Hero:React.FC =()=> {
               </span>
             </h1>
 
-            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-              We deliver innovative software solutions tailored to your business
-              needs. From concept to deployment, our team transforms your vision
-              into reality.
-            </p>
+            
 
             {/* CTA BUTTONS */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className=" flex flex-col sm:flex-row gap-4">
               <a
                 href="/contact"
-                className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition shadow-lg hover:shadow-xl text-center"
+                className="font-st px-7 py-2 bg-blue-500 hover:bg-blue-800 transition-all duration-500"
               >
                 Let's Talk
               </a>
 
-              <a
-                href="/portfolio"
-                className="bg-white/20 backdrop-blur-lg text-blue-200 px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/30 transition border border-blue-300 text-center"
+                <a
+                href="/contact"
+                className="px-7 py-2 bg-blue-500 hover:bg-blue-800 transition-all duration-500"
               >
-                View Our Work
+                Let's Talk
               </a>
             </div>
 
             {/* STATS */}
-            <div className="grid grid-cols-3 gap-6 mt-12">
+            {/* <div className="grid grid-cols-3 gap-6 mt-12">
               <div>
                 <div className="text-4xl font-bold text-blue-300">25+</div>
                 <div className="text-gray-200 mt-1">Years Experience</div>
@@ -91,11 +87,11 @@ export const Hero:React.FC =()=> {
                 <div className="text-4xl font-bold text-blue-300">98%</div>
                 <div className="text-gray-200 mt-1">Client Satisfaction</div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* RIGHT CONTENT */}
-          <div className="relative">
+          {/* <div className="relative">
             <div className="relative bg-gradient-to-br from-blue-100 to-purple-900 rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition duration-300">
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <div className="space-y-4">
@@ -110,7 +106,7 @@ export const Hero:React.FC =()=> {
                 </div>
               </div>
 
-              <div className="absolute -top-4 -right-4 bg-yellow-400 rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+              {/* <div className="absolute -top-4 -right-4 bg-yellow-400 rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -124,9 +120,9 @@ export const Hero:React.FC =()=> {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-              </div>
-            </div>
-          </div>
+              </div> */}
+            {/* </div>
+          </div> */} 
         </div>
       </div>
     </section>
