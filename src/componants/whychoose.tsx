@@ -16,8 +16,8 @@ const WhyChooseUs: React.FC = () => {
   const brands: string[] = [
     "/addidas.png",
     "/lofo.png",
-    "/lofo.png",
-    "/nike.png",
+    "/mcdonalds.png",
+    "/nike.jpeg",
     "/outfiters.png",
     "/zero.png",
   ];
@@ -61,7 +61,7 @@ const WhyChooseUs: React.FC = () => {
               <img
                 src={logo}
                 alt={`Brand ${idx}`}
-                className="max-h-12 object-contain"
+                className="max-h-20 object-contain"
               />
             </div>
           ))}

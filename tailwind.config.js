@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        stevie: ["StevieSans", "sans-serif"],
+      },
+    },
+    
   },
   plugins: [],
 };
