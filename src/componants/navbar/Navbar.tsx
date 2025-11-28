@@ -19,11 +19,11 @@ export const Navbar: React.FC = () => {
   });
 
   return (
-    <div className="flex justify-center text-white mt-2 h-screen">
+    <div className="flex fixed w-full z-50 justify-center text-white mt-2">
       <div
         className={`${
           strecth ? "w-6/12" : "w-10/12"
-        } fixed bg-black bg-opacity-90 transition-all duration-500 p-2 flex items-center justify-between h-fit`}
+        } bg-black bg-opacity-90 transition-all duration-500 p-2 flex items-center justify-between h-fit`}
       >
         <div className="gap-2 flex justify-center items-center">
           <span>
