@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        stevie: ["StevieSans", "sans-serif"],
+       
+        pt: ['"PT Sans"', 'sans-serif'],
       },
     },
     
