@@ -1,23 +1,26 @@
-import  { useRef } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 // Services data
 const services = [
   {
     title: "Web Design",
-    description: "Get stunning responsive websites crafted with modern UI/UX.",
+    description:
+      "Our AI services empower businesses to overcome challenges and create revolutionary user experiences through advanced digital solutions.",
     icon: "💻",
     link: "/web-design",
   },
   {
     title: "App Development",
-    description: "Build powerful mobile apps for Android and iOS.",
+    description:
+      "Our AI services empower businesses to overcome challenges and create revolutionary user experiences through advanced digital solutions.",
     icon: "📱",
     link: "/app-development",
   },
   {
     title: "AI Integration",
-    description: "Automate your business with cutting-edge AI solutions.",
+    description:
+      "Our AI services empower businesses to overcome challenges and create revolutionary user experiences through advanced digital solutions.",
     icon: "🤖",
     link: "/ai-integration",
   },
@@ -37,89 +40,101 @@ const services = [
   },
   {
     title: "Cybersecurity",
-    description: "Protect your business with industry-standard security.",
+    description:
+      "Our AI services empower businesses to overcome challenges and create revolutionary user experiences through advanced digital solutions.",
     icon: "🛡️",
     link: "/cybersecurity",
   },
 ];
+const Expertise = [
+  "Cloud Solutions",
+  "AI & Machine Learning",
+  "Blockchain Technology",
+  "Internet of Things (IoT)",
+  "Big Data & Analytics",
+  "DevOps & Automation",
+];
+
+const cardStyles = [
+  "bg-gradient-to-br from-white to-blue-700",
+  "bg-gradient-to-br from-white to-purple-700",
+  "bg-gradient-to-br from-white to-indigo-700",
+  "bg-gradient-to-br from-white to-pink-700",
+  "bg-gradient-to-br from-white to-orange-700",
+  "bg-gradient-to-br from-white to-teal-700",
+];
 
 export const Services = () => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  const cardStyles = [
-    "bg-gradient-to-br from-blue-500 to-blue-700 text-white",
-    "bg-gradient-to-br from-slate-700 to-slate-900 text-white",
-    "bg-gradient-to-br from-indigo-900 to-black text-white",
-    "bg-white/10 backdrop-blur-lg border border-white/20 text-white",
-    "bg-gradient-to-br from-gray-900 to-gray-700 text-white",
-    "bg-white border border-gray-200 text-gray-900",
-  ];
-
   return (
     <section
       ref={containerRef}
-      className="relative h-[250vh] w-full flex justify-center items-start py-10"
+      className="relative w-full"
+      style={{ height: `${(services.length - 1) * 100}vh` }}
     >
-      <div className="sticky top-10 w-full flex justify-center">
-        <div className="relative w-full flex justify-center items-center h-[700px] md:h-[600px]">
-          {services.map((service, index) => {
-            const total = services.length;
+      <div className="sticky top-0 h-[100vh] flex items-start overflow-hidden">
+        {services.map((service, index) => {
+          const start = index / services.length;
+          const end = (index + 1) / services.length;
 
-            const start = index / total;
-            const end = (index + 1) / total;
+          // Each card slides up to cover the previous one
+          const y = useTransform(
+            scrollYProgress,
+            [start, end],
+            [index === 0 ? "0vh" : "100vh", "0vh"]
+          );
 
-            const opacity = useTransform(
-              scrollYProgress,
-              [start, start + 0.1, end - 0.1, end],
-              [1, 1, 0, 0]
-            );
-
-            const y = useTransform(
-              scrollYProgress,
-              [start, end],
-              ["0%", "-20%"]
-            );
-
-            return (
-              <motion.div
-                key={index}
-                style={{ opacity, y, zIndex: total - index }}
-                className={`
-                  absolute w-[90%] max-w-4xl h-[450px] md:h-[400px] rounded-3xl shadow-2xl flex flex-col md:flex-row overflow-hidden transition-all duration-300 ${cardStyles[index]}
-                `}
-              >
-                {/* Left part: Icon + Title */}
-                <div className="w-full md:w-1/3 flex flex-col items-center justify-center p-6 md:p-8 bg-black/20">
-                  <div className="text-6xl md:text-8xl mb-4">
+          return (
+            <motion.div
+              key={index}
+              style={{
+                y,
+                zIndex: index,
+              }}
+              className={`absolute inset-0 w-full h-[100vh] overflow-hidden bg-white text-black border-t-2`}
+            >
+              <div className="flex flex-col md:flex-row h-full">
+                {/* Image Section */}
+                <div className="w-full md:w-1/2 h-1/2 bg-black/90 md:h-full relative overflow-hidden">
+                  <div className="absolute inset-0 " />
+                  <div className="h-full w-full flex items-center justify-center text-9xl">
                     {service.icon}
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-center">
-                    {service.title}
-                  </h3>
                 </div>
 
-                {/* Right part: Details */}
-                <div className="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
-                  <p className="text-base md:text-lg mb-4 md:mb-6 opacity-90">
+                {/* Content Section */}
+                <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                  <h2 className="text-5xl font-bold font-pt mb-6">{service.title}</h2>
+                  <p className="text-xl leading-relaxed opacity-90">
                     {service.description}
                   </p>
-
-                  <a
-                    href={service.link}
-                    className="font-semibold text-base md:text-lg underline underline-offset-4 self-start"
-                  >
-                    Learn More →
-                  </a>
+                  <div className="flex gap-5 underline-offset-8 underline hover:cursor-pointer mb-5">
+                    <p className="underline underline-offset-8 text-blue-500 active:text-blue-500">
+                      Exper areas
+                    </p>
+                    <p>Exper areas</p>
+                  </div>
+                  <ul className="flex flex-col">
+                    {Expertise.map((item, idx) => (
+                      <span
+                        key={idx}
+                        className="inline-block  text-white px-4 py-2 rounded-full text-sm md:text-base mr-2 mb-2"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </ul>
                 </div>
-              </motion.div>
-            );
-          })}
-        </div>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
