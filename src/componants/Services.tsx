@@ -1,4 +1,4 @@
-import  { useRef } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 // Services data
@@ -78,7 +78,7 @@ export const Services = () => {
       className="relative w-full"
       style={{ height: `${(services.length - 1) * 100}vh` }}
     >
-      <div className="sticky top-0 h-screen flex items-start overflow-hidden">
+      <div className="sticky top-0 h-[100vh] flex items-start overflow-hidden">
         {services.map((service, index) => {
           const start = index / services.length;
           const end = (index + 1) / services.length;
@@ -97,12 +97,12 @@ export const Services = () => {
                 y,
                 zIndex: index,
               }}
-              className={`absolute inset-0 w-full h-[80vh] overflow-hidden ${cardStyles[index]} text-white`}
+              className={`absolute inset-0 w-full h-[100vh] overflow-hidden bg-white text-black border-t-2`}
             >
               <div className="flex flex-col md:flex-row h-full">
                 {/* Image Section */}
-                <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent" />
+                <div className="w-full md:w-1/2 h-1/2 bg-black/90 md:h-full relative overflow-hidden">
+                  <div className="absolute inset-0 " />
                   <div className="h-full w-full flex items-center justify-center text-9xl">
                     {service.icon}
                   </div>
@@ -110,7 +110,7 @@ export const Services = () => {
 
                 {/* Content Section */}
                 <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                  <h2 className="text-5xl font-bold mb-6">{service.title}</h2>
+                  <h2 className="text-5xl font-bold font-pt mb-6">{service.title}</h2>
                   <p className="text-xl leading-relaxed opacity-90">
                     {service.description}
                   </p>

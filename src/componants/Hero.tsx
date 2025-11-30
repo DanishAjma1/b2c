@@ -1,6 +1,6 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-export const Hero:React.FC =()=> {
+export const Hero: React.FC = () => {
   const texts: string[] = [
     "DYNAMIC, INTELLIGENT, RESOURCEFUL, POWERFUL",
     "CUSTOM SOFTWARE SOLUTIONS FOR BUSINESS GROWTH",
@@ -43,18 +43,15 @@ export const Hero:React.FC =()=> {
         <div className="gap-6 items-center w-10/12">
           {/* LEFT CONTENT */}
           <div className="mt-24 ">
-           <h1 className="font- text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight min-h-[6rem]">
-  <span
-    className={`block text-blue-300 transition-opacity duration-500 ${
-      fade ? "opacity-100" : "opacity-0"
-    }`}
-  >
-    {texts[index]}
-  </span>
-</h1>
-
-
-            
+            <h1 className="font- text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight min-h-[6rem]">
+              <span
+                className={`block text-blue-300 transition-all duration-500 ${
+                  fade ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
+                }`}
+              >
+                {texts[index]}
+              </span>
+            </h1>
 
             {/* CTA BUTTONS */}
             <div className=" flex flex-col sm:flex-row gap-4 ">
@@ -114,10 +111,10 @@ export const Hero:React.FC =()=> {
                   />
                 </svg>
               </div> */}
-            {/* </div>
-          </div> */} 
+          {/* </div>
+          </div> */}
         </div>
       </div>
     </section>
   );
-}
+};
