@@ -55,15 +55,6 @@ const Expertise = [
   "DevOps & Automation",
 ];
 
-const cardStyles = [
-  "bg-gradient-to-br from-white to-blue-700",
-  "bg-gradient-to-br from-white to-purple-700",
-  "bg-gradient-to-br from-white to-indigo-700",
-  "bg-gradient-to-br from-white to-pink-700",
-  "bg-gradient-to-br from-white to-orange-700",
-  "bg-gradient-to-br from-white to-teal-700",
-];
-
 export const Services = () => {
   const containerRef = useRef(null);
 
