@@ -293,7 +293,7 @@ export const Navbar: React.FC = () => {
             </div>
           </div>
           {/* news letter */}
-          <div className="bg-white text-black font-pt text-sm flex flex-col gap-2 p-5 ">
+          <div className={`bg-white text-black font-pt text-sm ${strecth?'hidden':'flex'} flex-col gap-2 p-5`}>
             <h4 className="text-blue-500 font-bold">What's New?</h4>
             <div className="p-3 gap-2 flex bg-black/70 rounded-md">
               <img src="/zero.png" alt="news" className="w-14 h-12" />
