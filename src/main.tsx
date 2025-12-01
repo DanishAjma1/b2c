@@ -14,9 +14,8 @@ createRoot(document.getElementById("root")!).render(
     <Navbar />
     <Hero />
     <WhyChooseUs />
-    <TechnicalExpertise />
-
     <Services />
+    <TechnicalExpertise />
     <Footer />
   </StrictMode>
 );
