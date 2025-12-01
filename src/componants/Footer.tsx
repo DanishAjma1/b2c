@@ -1,8 +1,13 @@
 import React from "react";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { ContactForm } from "./ContactForm";
+import { LocationsSection } from "./Locations";
 
 const Footer: React.FC = () => {
   return (
+    <>
+    <ContactForm/>
+    <LocationsSection/>
     <footer className="bg-gray-900 text-gray-300 py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-3 gap-12">
         {/* Contact Info */}
@@ -70,6 +75,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 
