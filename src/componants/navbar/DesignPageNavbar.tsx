@@ -29,11 +29,11 @@ export const DesignPageNavbar: React.FC = () => {
 }, [lastScrollY]);
   
   return (
-    <div className={`flex fixed w-full z-30 justify-center  text-white transition py-2 ${
+    <div className={`flex fixed w-full z-30 justify-center  text-white transition${
           scroll && "bg-black/70" 
         }  ${hideNav &&  "bg-transparent"}`}>
       <div
-        className={`flex flex-col transition-all w-10/12 duration-500 mt-2 ${hideNav ? '-translate-y-full pointer-events-none':'-translate-y-0 pointer-events-auto'}`}
+        className={`flex flex-col transition-all w-10/12 duration-500 ${hideNav ? '-translate-y-full pointer-events-none':'translate-y-0 pointer-events-auto mt-4'}`}
       >
         <div className="transition-all duration-500 p-2 flex bg-transparent items-center justify-between w-full">
             <h1>EffectiveSoft.design</h1>
@@ -54,7 +54,7 @@ export const DesignPageNavbar: React.FC = () => {
           </div>
           <div className=" flex justify-center">
             <button
-              className={`px-4 py-2 bg-blue-500 hover:bg-blue-800 transition-all duration-500 ${
+              className={`px-5 py-2 bg-transparent outline outline-1 hover:bg-blue-800 transition duration-500 rounded-full ${
                 scroll && "py-1 px-2"
               }`}
             >let's talk
