@@ -1,38 +1,38 @@
 import React from "react";
 
-// interface Award {
-//   title: string;
-//   description: string;
-//   icon: string;
-//   link: string;
-// }
+interface Award {
+  title: string;
+  description: string;
+  icon: string;
+  link: string;
+}
 
-// const awards: Award[] = [
-//   {
-//     title: "Best Innovative Software 2024",
-//     description: "Awarded for delivering cutting-edge software solutions.",
-//     icon: "🏆",
-//     link: "/awards/innovative-software",
-//   },
-//   {
-//     title: "Top Cloud Solutions Provider",
-//     description: "Recognized for excellence in cloud integration and services.",
-//     icon: "☁️",
-//     link: "/awards/cloud-solutions",
-//   },
-//   {
-//     title: "AI Excellence Award",
-//     description:
-//       "Awarded for outstanding achievements in AI and Machine Learning.",
-//     icon: "🤖",
-//     link: "/awards/ai-excellence",
-//   },
-// ];
+const awards: Award[] = [
+  {
+    title: "Best Innovative Software 2024",
+    description: "Awarded for delivering cutting-edge software solutions.",
+    icon: "🏆",
+    link: "/awards/innovative-software",
+  },
+  {
+    title: "Top Cloud Solutions Provider",
+    description: "Recognized for excellence in cloud integration and services.",
+    icon: "☁️",
+    link: "/awards/cloud-solutions",
+  },
+  {
+    title: "AI Excellence Award",
+    description:
+      "Awarded for outstanding achievements in AI and Machine Learning.",
+    icon: "🤖",
+    link: "/awards/ai-excellence",
+  },
+];
 
 const TechnicalExpertise: React.FC = () => {
   return (
     <section className="">
-      <section className="flex items-center bg-indigo-950 h-80">
+      <section className="flex items-center bg-[#172b68] h-80">
         <div className="flex flex-row  text-white">
           <div className="w-1/3 font-sans font-medium flex justify-center">
             <h4>TECNICAL EPERTISES</h4>

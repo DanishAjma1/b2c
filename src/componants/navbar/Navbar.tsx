@@ -28,67 +28,11 @@ export const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   });
-  const solutions = [
-    "Salesforce",
-    "AWS",
-    "Power BI",
-    "SAP",
-    "ServiceNow",
-    "Shopify",
-    "MuleSoft",
-    "Azure",
-  ];
-  const expertises = [
-    "UX Design",
-    "RPA",
-    "DevOps",
-    "IoT",
-    "Blockchain",
-    "AR/VR/MR",
-    "Cybersecurity",
-    "Data Science",
-  ];
-  const marketingServices = [
-    "Media Buying",
-    "SEO",
-    "SMM",
-    "ORM",
-    "Email Marketing",
-    "Content Strategy",
-  ];
-  const commercialServices = [
-    "2D Animation",
-    "3D Animation",
-    "Video Ads",
-    "Motion Graphics",
-    "Video Editing",
-    "CGI Ads",
-  ];
-  const webDevServices = [
-    "WordPress",
-    "Shopify",
-    "Custom Code",
-    "Landing Pages",
-  ];
-  const GraphicsServices = [
-    "UI/UX Design",
-    "Brand Identity",
-    "Content Design",
-    "Logo Design",
-    "Banners/Flyers",
-    "Packaging",
-  ];
-  const consultingServices = [
-    "Digital Transformation",
-    "Cloud Solutions",
-    "IT Strategy",
-    "System Integration",
-  ];
   return (
     <div className="flex fixed w-full z-30 justify-center text-white mt-2">
       <div
         className={`${
-          strecth ? "w-6/12" : "w-10/12"
+          strecth ? "w-6/12" : "w-8/12"
         } bg-black bg-opacity-90 flex flex-col transition-all duration-500`}
       >
         <div className="transition-all duration-500 p-2 flex items-center justify-between h-fit">
@@ -100,7 +44,7 @@ export const Navbar: React.FC = () => {
           </div>
           <div className="flex justify-center relative">
             <ul className="flex gap-5">
-              {["what we do", "who we are", "Insights", "Case Studies"].map(
+              {["What we do", "Who we are", "Insights", "Case Studies"].map(
                 (value, idx) => (
                   <div className="relative bg-black">
                     {/* NAV LIST */}
@@ -114,11 +58,13 @@ export const Navbar: React.FC = () => {
                       className="flex items-center gap-1 hover:cursor-pointer hover:text-gray-600 transition-all duration-300"
                     >
                       {value}
-                      {navHover && index === idx ? (
+                      {value!=="Case Studies"?
+                      (navHover && index === idx ? (
                         <ChevronDown className="w-4 h-4" />
                       ) : (
                         <ChevronRight className="w-4 h-4" />
-                      )}
+                      )):(<></>)
+                    }
                     </li>
                   </div>
                 )
@@ -143,179 +89,102 @@ export const Navbar: React.FC = () => {
             setNavHover(false);
             setIndex(null);
           }}
-          className={`absolute top-full mt-1 flex overflow-y-scroll scroll-smooth ${
+          className={`absolute top-full mt-1 flex ${
             strecth ? "flex-col" : "flex-row"
           } gap-2 justify-center ${
-            strecth ? "w-6/12" : "w-10/12"
-          }  transition-opacity duration-500 ${
-            selectedNav === "what we do" && navHover && index === 0
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+            strecth ? "w-6/12" : "w-8/12"
+          }  transition-all duration-500 ${
+            navHover
+              ? "opacity-100 pointer-events-auto translate-y-0"
+              : "opacity-0 pointer-events-none -translate-y-1"
           }`}
         >
+          {selectedNav === "What we do" && (
+             <div
+            className={`bg-black/80 p-6 shadow flex justify-center text-xs font-pt ${
+              strecth ? "w-full" : "w-8/12"
+            }`}
+          >
+              <div className="grid grid-flow-col text-base">
+                <div className="flex flex-col gap-2 pr-20 border-r border-gray-700">
+                  <span className="text-gray-500 text-xs font-bold mb-1">Our Expertise</span>
+                  {["Design",
+                  "Product engineering",
+                  "Cloud",
+                  "Data services",
+                  "AI solutions"].map((value,idx)=>(
+                  <p key={idx} className="hover:text-blue-500 transition hover:cursor-pointer">{value}</p>
+                  ))}
+                  
+                </div>
+                <div className="flex flex-col gap-2 px-20 border-r  border-gray-700">
+                  <span className="text-gray-500 text-xs font-bold mb-1">Fintech specialization</span>
+                  {["Trading plateform"].map((value,idx)=>(
+                  <p key={idx} className="hover:text-blue-500 hover:cursor-pointer transition ">{value}</p>
+                  ))}
+                </div>
+                <div className="flex flex-col gap-2 pl-20">
+                  <span className="text-gray-500 text-xs font-bold mb-1">Healthcare specialization</span>
+                  {["Custom RCM solutions",
+                  "AI solutions for healthcare",
+                  "Custom healthcare software",
+                  ].map((value,idx)=>(
+                  <p key={idx} className="hover:text-blue-500 transition  hover:cursor-pointer">{value}</p>
+                  ))}
+                </div>
+            </div>
+          </div>
+)}
+         {selectedNav === "Who we are" && (
           <div
             className={`bg-black/80 p-6 shadow flex text-xs font-pt ${
               strecth ? "w-full" : "w-8/12"
             }`}
           >
             <div>
-              <div className="flex flex-row bg-gray-600 rounded-md">
-                <div className="flex flex-col md:w-1/2 px-5 py-2">
-                  <h4 className="border-b-2 border-blue-500 py-3 text-sm font-medium">
-                    Solutions
-                  </h4>
-                  <div className="flex gap-2 py-3 flex-wrap">
-                    {solutions.map((v, idx) => (
-                      <p
-                        key={idx}
-                        className="px-2 py-0.5 hover:cursor-pointer transition-all duration-100 hover:bg-blue-500 hover:text-white flex items-center rounded-full bg-black"
-                      >
-                        {v}
-                      </p>
-                    ))}
+              <div className="flex flex-row text-base px-5">
+                <div className="flex flex-col gap-3 w-1/3 border-r-2  border-gray-700">{["About us","Leadership","Experts","Careers","Certifications"].map((value,idx)=>(
+                  <p key={idx}>{value}</p>
+                ))}</div>
+                <div className="flex flex-col w-2/3 pl-10">
+                <div className="flex justify-end">
+                  <h4 className="text-blue-500 font-bold pb-2">B2C Incorporation</h4>
                   </div>
-                </div>
-                <div className="flex flex-col md:w-1/2 px-5 py-2">
-                  <h4 className="border-b-2 border-blue-500 py-3 text-sm font-medium">
-                    Expertises
-                  </h4>
-                  <div className="flex gap-2 py-3 flex-wrap">
-                    {expertises.map((v, idx) => (
-                      <p
-                        key={idx}
-                        className="px-2 py-0.5 hover:cursor-pointer hover:bg-blue-500 transition-all duration-100 hover:text-white flex items-center rounded-full bg-black"
-                      >
-                        {v}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              {/* services */}
-              <div
-                className={`text-white py-6 grid grid-flow-col ${
-                  strecth
-                    ? "grid-cols-3 grid-rows-2 gap-5"
-                    : "grid-cols-5 grid-rows-1 gap-2"
-                } flex-wrap`}
-              >
-                <div className="flex flex-col">
-                  <h3 className="pb-2 text-sm font-medium border-b">
-                    Digital Marketing
-                  </h3>
-                  <div className="flex flex-col gap-1 py-3">
-                    {marketingServices.map((value, idx) => (
-                      <p
-                        className="hover:cursor-pointer hover:text-blue-500"
-                        key={idx}
-                      >
-                        <span className="flex items-center gap-2">
-                          <ArrowRight className="w-3 h-3" />
-                          {value}
-                        </span>
-                      </p>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="pb-2 text-sm font-medium border-b">
-                    Commercial Production
-                  </h3>
-                  <div className="flex flex-col gap-1 py-3">
-                    {commercialServices.map((value, idx) => (
-                      <p
-                        className="hover:cursor-pointer hover:text-blue-500"
-                        key={idx}
-                      >
-                        <span className="flex items-center gap-2">
-                          <ArrowRight className="w-3 h-3" />
-                          {value}
-                        </span>
-                      </p>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="pb-2 text-sm font-medium border-b">
-                    Web Development
-                  </h3>
-                  <div className="flex flex-col gap-1 py-3">
-                    {webDevServices.map((value, idx) => (
-                      <p
-                        className="hover:cursor-pointer hover:text-blue-500"
-                        key={idx}
-                      >
-                        <span className="flex items-center gap-2">
-                          <ArrowRight className="w-3 h-3" />
-                          {value}
-                        </span>
-                      </p>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="pb-2 text-sm font-medium border-b">
-                    Graphic Design
-                  </h3>
-                  <div className="flex flex-col gap-1 py-3">
-                    {GraphicsServices.map((value, idx) => (
-                      <p
-                        className="hover:cursor-pointer hover:text-blue-500"
-                        key={idx}
-                      >
-                        <span className="flex items-center gap-2">
-                          <ArrowRight className="w-3 h-3" />
-                          {value}
-                        </span>
-                      </p>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="pb-2 text-sm font-medium border-b">
-                    IT Consulting
-                  </h3>
-                  <div className="flex flex-col gap-1 py-3">
-                    {consultingServices.map((value, idx) => (
-                      <p
-                        className="hover:cursor-pointer hover:text-blue-500"
-                        key={idx}
-                      >
-                        <span className="flex items-center gap-2">
-                          <ArrowRight className="w-3 h-3" />
-                          {value}
-                        </span>
-                      </p>
-                    ))}
+                  <p className="">We are extremely satisfied with our collaboration with EffectiveSoft. We engaged them for business analysis, UI/UX design, web development, and testing. The results were visually stunning designs and wireframes, remarkable UX suggestions, and an app fully aligned with our requirements. The team quickly understood our needs, worked flexibly within tight deadlines, and consistently delivered exceptional work.</p>
+                  <div className="flex flex-col justify-start pt-5">
+                  <h4>Gulfam .......</h4>
+                  <h5 className="text-gray-500">CEO</h5>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          {/* news letter */}
-          <div className={`bg-white text-black font-pt text-sm ${strecth?'hidden':'flex'} flex-col gap-2 p-5`}>
-            <h4 className="text-blue-500 font-bold">What's New?</h4>
-            <div className="p-3 gap-2 flex bg-black/70 rounded-md">
-              <img src="/zero.png" alt="news" className="w-14 h-12" />
-              <div className="flex flex-col">
-                <h6>AI FOR BUSINESS IMPACT</h6>
-                <p className="text-blue-500">Roadmap for SMEs & SMBs</p>
+          )}
+          {/* Insights */}
+            {selectedNav === "Insights" && (
+          <div
+            className={`bg-black/80 p-6 shadow flex text-xs font-pt ${
+              strecth ? "w-full" : "w-8/12"
+            }`}
+          >
+            <div>
+              <div className="grid grid-flow-col grid-cols-3 text-base px-5">
+               <div className="flex flex-col  gap-3 border-r  border-gray-700"><h4 className="hover:text-blue-500">Blog</h4>
+               <h4 className="hover:text-blue-500">Company updates</h4></div>
+               <div className="grid col-span-2 grid-flow-col">
+              <div className="flex flex-col border-r px-10  border-gray-700">
+                <img src="/workflow.jpeg" alt="workflow" className="w-full h-32" />
+                <h5 className="mt-4">Architecture review: a strategic investment in sustainable growth</h5>
+              </div>
+              <div className="flex flex-col items-center pl-10">
+                <img src="/lecture.jpeg" alt="lecture" className="w-full h-32" />
+                <h5 className="mt-4">Architecture review: a strategic investment in sustainable growth</h5>
+              </div>
+              </div>
               </div>
             </div>
-            <h4 className="text-md text-blue-500 font-bold">Quick Contact</h4>
-            <p className="flex gap-2">
-              <span>
-                <Phone className="w-4 h-4 text-blue-500" />
-              </span>
-              +44 7380 594504
-            </p>
-            <p className="flex gap-2">
-              <span>
-                <Mail className="w-4 h-4 text-blue-500" />
-              </span>
-              hello@abcdmedia.com
-            </p>
           </div>
+          )}
         </div>
         {/* )} */}
       </div>
