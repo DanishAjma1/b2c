@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { DesignPageNavbar } from '../../componants/navbar/DesignPageNavbar'
-import { ArrowLeft, ArrowRight, CaseUpper, Snowflake, Volleyball } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Snowflake, Volleyball } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BorderAnimation } from '../../componants/BorderAnimation';
 import { ButtonsWithArcs } from '../../componants/ButtonsWithArcs';
