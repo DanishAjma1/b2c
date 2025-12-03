@@ -214,7 +214,7 @@ export const DesignHome: React.FC = () => {
           {/* scroll container */}
           <div
             ref={scrollRef}
-            className="flex flex-row overflow-x-hidden snap-both snap-mandatory scroll-smooth no-scrollbar w-full"
+            className="flex flex-row overflow-x-hidden snap-both snap-mandatory scroll-smooth w-full"
 
           /* remove onTouchMove preventDefault — that blocks natural touch scroll */
           >
@@ -269,14 +269,10 @@ export const DesignHome: React.FC = () => {
           </div>
 
           <aside className=''>
-            <img src="/image.png" alt="image" className="w-64 [transform-style:preserve-3d] animate-spin3d" />
+            <img src="/image.png" alt="image" className="w-64" />
           </aside>
         </section>
         <div className='absolute -z-10 inset-0 flex justify-end' >
-          <div>
-            <div className=''></div>
-            <div></div>
-          </div>
         </div>
       </section>
       <footer>

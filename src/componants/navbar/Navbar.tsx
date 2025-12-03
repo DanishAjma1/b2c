@@ -1,12 +1,10 @@
 import {
-  ArrowRight,
   ChevronDown,
   ChevronRight,
-  ListMinus,
   Mail,
-  Phone,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -37,10 +35,14 @@ export const Navbar: React.FC = () => {
       >
         <div className="transition-all duration-500 p-2 flex items-center justify-between h-fit">
           <div className="gap-2 flex justify-center items-center">
-            <span className={`ml-2 ${strecth && "bg-blue-500 p-1"}`}>
-              <ListMinus className={`w-6 h-6 `} />
+            <Link to={"/"}>
+            <span className={`ml-2 ${strecth? "flex p-1 bg-blue-600" : 'hidden'}`}>
+              <img src="/B2CIconWhite.png" alt="logo"  className="w-6 h-6 hover:cursor-pointer"/>
             </span>
-            <h1>{strecth ? "" : "EffectiveSoft"}</h1>
+            </Link>
+            <Link to={"/"}>
+            <h1>{strecth ? "" : <img src="/b2clogowhite.png" alt=""  className="w-full  px-2 h-8 hover:cursor-pointer"/>}</h1>
+            </Link>
           </div>
           <div className="flex justify-center relative">
             <ul className="flex gap-5">
@@ -108,12 +110,12 @@ export const Navbar: React.FC = () => {
               <div className="grid grid-flow-col text-base">
                 <div className="flex flex-col gap-2 pr-20 border-r border-gray-700">
                   <span className="text-gray-500 text-xs font-bold mb-1">Our Expertise</span>
-                  {["Design",
-                  "Product engineering",
-                  "Cloud",
-                  "Data services",
-                  "AI solutions"].map((value,idx)=>(
-                  <p key={idx} className="hover:text-blue-500 transition hover:cursor-pointer">{value}</p>
+                  {[{heading:"Design",to:"/design"},
+                  {heading:"Product engineering",to:"/design"},
+                  {heading:"Cloud",to:"/design"},
+                  {heading:"Data services",to:"/data-service"},
+                  {heading:"AI solutions",to:"/ai-service"}].map((value,idx)=>(
+                  <Link to={value.to} key={idx} className="hover:text-blue-500 transition hover:cursor-pointer">{value.heading}</Link>
                   ))}
                   
                 </div>

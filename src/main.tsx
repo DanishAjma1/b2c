@@ -7,7 +7,7 @@ import CursorDot from "./componants/CursorDot";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
-    <CursorDot/>
+      <CursorDot />
       <App />
     </BrowserRouter>
   </StrictMode>
