@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { AIServicesSection } from '../../componants/AiServices'
 import { OurProjects } from '../../componants/OurProjects'
 import { ArrowUpRight } from 'lucide-react';
-import { ProcessProgress } from '../../componants/ProgressBAr';
 import { FAQAccordion } from '../../componants/FQA'; import { FeaturedProjects } from '../../componants/FeaturedProjects';
 import { TechnologiesUsed } from '../../componants/TechnologiesUsed';
+import { ProcessProgress } from '../../componants/ProgressBar';
 
 interface Technology {
   name: string;
@@ -219,9 +219,7 @@ export const AIDevelopementServices: React.FC = () => {
             </h2>
             <p className='text-xl w-3/5'>
               We're eager to delve deeper and understand your specific needs to unlock the full potential of AI for your business. By learning more about your challenges and goals, we can tailor our solutions to serve you best.</p>
-            <form className='group flex flex-col gap-6' onSubmit={(e) => {
-
-            }}>
+            <form className='group flex flex-col gap-6'>
               <input type="text" placeholder='Message' className='w-full bg-transparent pb-5 outline-none border-b my-5' />
               <button className='bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300'>Next</button>
             </form>

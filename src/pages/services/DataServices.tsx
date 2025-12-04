@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { AIServicesSection } from '../../componants/AiServices'
-import { OurProjects } from '../../componants/OurProjects'
 import { ArrowUpRight } from 'lucide-react';
-import { ProcessProgress } from '../../componants/ProgressBAr';
+import { ProcessProgress } from '../../componants/ProgressBar';
 import { FAQAccordion } from '../../componants/FQA'; import { FeaturedProjects } from '../../componants/FeaturedProjects';
 import { TechnologiesUsed } from '../../componants/TechnologiesUsed';
 
@@ -207,7 +205,7 @@ export const DataServices: React.FC = () => {
         <section className='py-10 w-8/12 mx-auto'>
           <div className='flex flex-col gap-3 py-10'>
             <h5 className='text-sm font-medium'>SERVICES</h5>
-            <h2 className='text-4xl font-medium'>Services we develop for</h2>
+            <h2 className='text-4xl font-medium'>Data analytics services we offer</h2>
           </div>
           <div className='grid grid-cols-2 space-y-6 items-center'>
             {Industries.map((v, idx) => (
@@ -224,8 +222,8 @@ export const DataServices: React.FC = () => {
       <div className='bg-slate-100'>
         <div className='w-8/12 mx-auto py-10'>
           <div className='flex flex-col gap-3 py-10'>
-            <h5 className='text-sm font-medium'>SERVICES</h5>
-            <h2 className='text-4xl font-medium'>Services we develop</h2>
+            <h5 className='text-sm font-medium'>SOLUTIONS</h5>
+            <h2 className='text-4xl font-medium'>Data and analytics solutions</h2>
           </div>
           {Array.from({ length: 5 }).map((_) => (
 

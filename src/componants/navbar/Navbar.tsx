@@ -10,6 +10,7 @@ export const Navbar: React.FC = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [index, setIndex] = useState<number | null>(null);
   const [strecth, setStrech] = useState(false);
+  const [logo, setLogo] = useState("/white spaced logo.png");
   const [navHover, setNavHover] = useState(false);
   const [selectedNav, setSelectedNav] = useState<string | null>(null);
 
@@ -27,28 +28,30 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   });
   return (
-    <div className="flex fixed w-full z-30 justify-center text-white mt-2">
+    <div className="flex fixed w-full z-30 justify-center text-white mt-3">
       <div
         className={`${
-          strecth ? "w-6/12" : "w-8/12"
-        } bg-black bg-opacity-90 flex flex-col transition-all duration-500`}
+          strecth ? "w-5/12 p-0" : "w-8/12 p-1"
+        } bg-black/70 bg-opacity-90 flex flex-col transition-all duration-500`}
       >
         <div className="transition-all duration-500 p-2 flex items-center justify-between h-fit">
           <div className="gap-2 flex justify-center items-center">
             <Link to={"/"}>
-            <span className={`ml-2 ${strecth? "flex p-1 bg-blue-600" : 'hidden'}`}>
-              <img src="/B2CIconWhite.png" alt="logo"  className="w-6 h-6 hover:cursor-pointer"/>
+            <span className={`ml-2 ${strecth? "flex p-2 bg-blue-600" : 'hidden'}`}>
+              <img src="/B2CIconWhite.png" alt="logo"  className="w-5 h-5 hover:cursor-pointer"/>
             </span>
             </Link>
             <Link to={"/"}>
-            <h1>{strecth ? "" : <img src="/b2clogowhite.png" alt=""  className="w-full  px-2 h-8 hover:cursor-pointer"/>}</h1>
+            <h1 onMouseEnter={()=>setLogo("/spaced logo blue.png")}
+              onMouseLeave={()=>setLogo("/white spaced logo.png")}
+              >{strecth ? "" : <img src={logo} alt="B2Clogo"  className="w-full  px-2 h-8 hover:cursor-pointer transition-transform duration-500 hover:"/>}</h1>
             </Link>
           </div>
           <div className="flex justify-center relative">
             <ul className="flex gap-5">
               {["What we do", "Who we are", "Insights", "Case Studies"].map(
                 (value, idx) => (
-                  <div className="relative bg-black">
+                  <div className="relative">
                     {/* NAV LIST */}
                     <li
                       key={idx}
@@ -75,11 +78,11 @@ export const Navbar: React.FC = () => {
           </div>
           <div className=" flex justify-center">
             <button
-              className={`px-4 py-2 bg-blue-500 hover:bg-blue-800 transition-all duration-500 ${
-                strecth && "py-1 px-2"
+              className={`bg-blue-600 hover:bg-blue-800 transition-all duration-500 ${
+                strecth? "p-2":'px-4 py-1'
               }`}
             >
-              {strecth ? <Mail className="h-6 w-6" /> : "Send request"}
+              {strecth ? <Mail className="h-5 w-5" /> : "Send request"}
             </button>
           </div>
         </div>
@@ -94,7 +97,7 @@ export const Navbar: React.FC = () => {
           className={`absolute top-full mt-1 flex ${
             strecth ? "flex-col" : "flex-row"
           } gap-2 justify-center ${
-            strecth ? "w-6/12" : "w-8/12"
+            strecth ? "w-5/12" : "w-8/12"
           }  transition-all duration-500 ${
             navHover
               ? "opacity-100 pointer-events-auto translate-y-0"
@@ -114,7 +117,7 @@ export const Navbar: React.FC = () => {
                   {heading:"Product engineering",to:"/design"},
                   {heading:"Cloud",to:"/design"},
                   {heading:"Data services",to:"/data-service"},
-                  {heading:"AI solutions",to:"/ai-service"}].map((value,idx)=>(
+                  {heading:"AI Automation",to:"/ai-service"}].map((value,idx)=>(
                   <Link to={value.to} key={idx} className="hover:text-blue-500 transition hover:cursor-pointer">{value.heading}</Link>
                   ))}
                   

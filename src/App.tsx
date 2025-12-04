@@ -4,7 +4,7 @@ import { Home } from "./pages/home/home";
 import { DesignHome } from "./pages/design/DesignHome";
 import { AIDevelopementServices } from "./pages/services/AIDevelopementServices";
 import { DataServices } from "./pages/services/DataServices";
-import { DesignLayout } from "./componants/layout/designLayout";
+import { DesignLayout } from "./componants/layout/DesignLayout";
 import { DashboardLayout } from "./componants/layout/DashboardLayout";
 function App() {
   return (
