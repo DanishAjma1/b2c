@@ -39,11 +39,10 @@ export const Hero: React.FC = () => {
       {/* <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div> */}
 
-      <div className="container flex justify-center  relative z-10">
-        <div className="gap-6 items-center w-10/12">
+      <div className="w-8/12 flex justify-center  relative z-10 mx-auto h-full">
+        <div className="gap-6 flex flex-col justify-center w-full h-5/6">
           {/* LEFT CONTENT */}
-          <div className="mt-24 ">
-            <h1 className="font- text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight min-h-[6rem]">
+            <h1 className="font-pt text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight min-h-[6rem]">
               <span
                 className={`block text-blue-300 transition-all duration-500 ${
                   fade ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
@@ -78,7 +77,6 @@ export const Hero: React.FC = () => {
                 <div className="text-gray-200 mt-1">Client Satisfaction</div>
               </div>
             </div> */}
-          </div>
 
           {/* RIGHT CONTENT */}
           {/* <div className="relative">

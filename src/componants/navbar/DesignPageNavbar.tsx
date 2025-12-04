@@ -38,7 +38,7 @@ export const DesignPageNavbar: React.FC = () => {
         <div className="transition-all duration-500 p-2 flex bg-transparent items-center justify-between w-full">
             <h1>EffectiveSoft.design</h1>
           <div className="flex justify-center relative">
-            <ul className="flex gap-5">
+            <ul className="flex gap-5"> 
              {["service", "our works", "about us", "contacts"].map((value, idx) => (
                     <div className="relative" key={idx}>
                         {/* NAV LIST */}

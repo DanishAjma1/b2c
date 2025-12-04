@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import { AIServicesSection } from '../../componants/AiServices'
-import { OurProjects } from '../../componants/OurProjects'
 import { ArrowUpRight } from 'lucide-react';
+import { ProcessProgress } from '../../componants/ProgressBar';
 import { FAQAccordion } from '../../componants/FQA'; import { FeaturedProjects } from '../../componants/FeaturedProjects';
 import { TechnologiesUsed } from '../../componants/TechnologiesUsed';
-import { ProcessProgress } from '../../componants/ProgressBar';
 
 interface Technology {
   name: string;
@@ -14,7 +12,7 @@ interface Technology {
 interface TechCategory {
   [key: string]: Technology[];
 }
-export const AIDevelopementServices: React.FC = () => {
+export const DataServices: React.FC = () => {
   const [active, setActive] = useState(0);
 
   const [activeTab, setActiveTab] = useState<string>('Frameworks and libraries');
@@ -86,19 +84,7 @@ export const AIDevelopementServices: React.FC = () => {
       icon: 'image.png',
       heading: "HealthCare",
       description: "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data."
-    }, {
-      icon: 'image.png',
-      heading: "HealthCare",
-      description: "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data."
-    }, {
-      icon: 'image.png',
-      heading: "HealthCare",
-      description: "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data."
-    }, {
-      icon: 'image.png',
-      heading: "HealthCare",
-      description: "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data."
-    },
+    }
   ];
   const Processes = [
     {
@@ -185,10 +171,10 @@ export const AIDevelopementServices: React.FC = () => {
   };
   return (
     <div>
-      <div className='w-8/12 mx-auto min-h-screen flex flex-col items-center'>
+      <div className='w-8/12 mx-auto min-h-[80vh] flex flex-col items-center'>
         <div className='flex py-16 h-5/6 mt-28'>
           <div className='flex flex-col w-1/2 h-3/4 gap-3 '>
-            <h2 className='text-5xl font-medium'>AI Development Services</h2>
+            <h2 className='text-5xl font-medium w-3/5'>Data Analytics Services and Solutions</h2>
             <p className='text-2xl py-8 w-4/5'>Team up with EffectiveSoft to explore the limitless potential of artificial intelligence (AI)! From AI strategy building and data analysis to AI integration and deployment, our comprehensive artificial intelligence development services are tailored to address challenges across domains.</p>
             <div className='flex gap-5 text-lg font-medium w-5/6'>
               <button className='bg-blue-700 px-8 py-2 hover:bg-transparent w-full text-white hover:text-black transition'>Let's talk</button>
@@ -199,49 +185,76 @@ export const AIDevelopementServices: React.FC = () => {
             <img src="/image.png" alt="image" className='max-h-[60vh] object-contain' />
           </div>
         </div>
-        <div className='flex my-28 bg-blue-800 p-8'>
-          <div className='flex flex-col w-1/2 h-3/4 gap-3 text-white'>
-            <h2 className='text-2xl font-medium'>AI Development Services</h2>
-            <p className='text-lg pt-6'>Team up with EffectiveSoft to explore the limitless potential of artificial intelligence (AI)! From AI strategy building and data analysis to AI integration and deployment, our comprehensive artificial intelligence development services are tailored to address challenges across domains.</p>
-          </div>
-          <div className='w-1/2 flex justify-center'>
-            <img src="/image.png" alt="image" className='w-40 object-contain' />
-          </div>
-        </div>
+
       </div>
-      <div>
-        <AIServicesSection />
-      </div>
-      <div className='w-8/12 mx-auto'>
-        <div className='py-16 my-10 px-16 text-white bg-blue-950'>
+      <div className=' bg-gray-50'>
+        {/* <div className='py-16 my-10 px-16 text-white bg-blue-950'>
           <div className='flex flex-col gap-6 py-5 px-6'>
             <h2 className='text-5xl bg-blue-700 px-4 py-2 w-fit'>What about you?
             </h2>
             <p className='text-xl w-3/5'>
               We're eager to delve deeper and understand your specific needs to unlock the full potential of AI for your business. By learning more about your challenges and goals, we can tailor our solutions to serve you best.</p>
-            <form className='group flex flex-col gap-6'>
+            <form className='group flex flex-col gap-6' onSubmit={(e) => {
+
+            }}>
               <input type="text" placeholder='Message' className='w-full bg-transparent pb-5 outline-none border-b my-5' />
               <button className='bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300'>Next</button>
             </form>
           </div>
-        </div>
-        <section className='py-10'>
+        </div> */}
+        <section className='py-10 w-8/12 mx-auto'>
           <div className='flex flex-col gap-3 py-10'>
-            <h5 className='text-sm font-medium'>INDUSTRIES</h5>
-            <h2 className='text-4xl font-medium'>Industries we develop for</h2>
+            <h5 className='text-sm font-medium'>SERVICES</h5>
+            <h2 className='text-4xl font-medium'>Data analytics services we offer</h2>
           </div>
-          <div className='grid grid-cols-3 space-y-6 items-center'>
+          <div className='grid grid-cols-2 space-y-6 items-center'>
             {Industries.map((v, idx) => (
               <IndustryDiv key={idx} icon={v.icon} heading={v.heading} description={v.description} />
             ))}
           </div>
-          <div className='flex justify-center py-10'><button className='bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto'>Book a call</button></div>
+          <div className='flex justify-center py-10'><button className='bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto'>Let's discuss you project</button></div>
         </section>
       </div>
-
-      <div>
-        <OurProjects />
+      <div className='flex justify-center py-16'>
+        <img src="https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/34103/330.light-2.png" alt="Data analytics services" loading="lazy" className='w-4/6' />
       </div>
+
+      <div className='bg-slate-100'>
+        <div className='w-8/12 mx-auto py-10'>
+          <div className='flex flex-col gap-3 py-10'>
+            <h5 className='text-sm font-medium'>SOLUTIONS</h5>
+            <h2 className='text-4xl font-medium'>Data and analytics solutions</h2>
+          </div>
+          {Array.from({ length: 5 }).map((_) => (
+
+            <div className='flex items-center py-10 px-5 hover:bg-white'>
+              <div className='w-1/4'>
+                <div className='flex items-start gap-3'><span className='mt-1'>01</span>
+                  <h4 className='text-3xl font-medium'>Design and audit of architecture for data platforms</h4>
+                </div>
+              </div>
+              <div className='w-3/4'>
+                <p className='w-5/6 text-lg ml-auto'>We offer architecture design for data platforms based on the requirements and objectives of your business. There are various architectural concepts, and our specialists have experience in developing each of them: databases, data warehouses, data lakes, data mesh, and more. Furthermore, we can audit customers’ existing architecture to provide recommendations for its improvement.</p>
+              </div>
+            </div>
+          ))}
+          <div className='flex justify-center py-10'><button className='bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto'>Get started with B2C</button></div>
+        </div>
+      </div>
+      <div className='py-16'>
+        <div className='w-8/12 mx-auto py-10'>
+          <div className='flex flex-col gap-2 py-10'>
+            <h5 className='text-sm font-medium'>OUR COMPLIANCE</h5>
+            <h2 className='text-4xl font-medium'>Data security and compliance</h2>
+            <p className='w-3/5 text-lg mt-4'>We apply advanced security solutions to ensure that your data is completely secure. As a result, you avoid internal data misuse, data breaches, and compliance issues.</p>
+            <div className='grid grid-cols-4'>
+              <div className='p-5 w-24'>
+                <img src="/image.png" alt="image" className='grayscale' />
+              </div>
+            </div>
+          </div></div>
+      </div>
+
       <div className='w-8/12 mx-auto'>
         <div className='py-16 my-16 px-16 text-white flex bg-blue-950'>
           <div className='flex flex-col gap-6 py-5 px-6 w-1/2'>
@@ -290,15 +303,15 @@ export const AIDevelopementServices: React.FC = () => {
         <section className='py-10 min-h-screen flex justify-center'>
           <div className='my-16 text-white flex bg-blue-950 relative w-full'>
             <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/X0ZGhcvM0Xs?si=c_yZRBIVaWGKp_43"
-              title="hello"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              className="w-full h-full"
-            />
+  width="100%"
+  height="100%"
+  src="https://www.youtube.com/embed/X0ZGhcvM0Xs?si=c_yZRBIVaWGKp_43"
+  title="hello"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+  className="w-full h-full"
+/>
 
             {/* <video
               loop
@@ -341,22 +354,22 @@ export const AIDevelopementServices: React.FC = () => {
                 key={index}
                 className="flex items-center justify-center p-6  rounded-lg  duration-300 cursor-pointer group"
               >
-                <img
-                  src={tech.logo}
-                  alt={tech.name}
-                  className="w-24 h-24 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
-                  onError={(e) => {
-                    const img = e.currentTarget;
+               <img
+  src={tech.logo}
+  alt={tech.name}
+  className="w-24 h-24 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+  onError={(e) => {
+    const img = e.currentTarget;
 
-                    // avoid infinite onError loop
-                    if (img.dataset.fallbackApplied === "true") return;
+    // avoid infinite onError loop
+    if (img.dataset.fallbackApplied === "true") return;
 
-                    img.dataset.fallbackApplied = "true"; // mark fallback applied
-                    img.src = `https://via.placeholder.com/100x100?text=${encodeURIComponent(
-                      tech.name
-                    )}`;
-                  }}
-                />
+    img.dataset.fallbackApplied = "true"; // mark fallback applied
+    img.src = `https://via.placeholder.com/100x100?text=${encodeURIComponent(
+      tech.name
+    )}`;
+  }}
+/>
 
               </div>
             ))}

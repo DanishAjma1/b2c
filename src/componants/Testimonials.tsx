@@ -141,7 +141,7 @@ const TestimonialsSection: React.FC = () => {
             onMouseLeave={handleMouseLeave}
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
-            className="flex gap-6 overflow-x-auto px-12 pb-4 cursor-grab scrollbar-hide"
+            className="flex gap-6 overflow-x-hidden px-12 pb-4 cursor-grab"
             
           >
             {testimonials.map((testimonial, index) => (

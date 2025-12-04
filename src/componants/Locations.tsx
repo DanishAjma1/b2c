@@ -12,64 +12,30 @@ interface RegionLocations {
 }
 
 export const LocationsSection:React.FC=()=> {
-  const [activeTab, setActiveTab] = useState<string>('Americas');
+  const [activeTab, setActiveTab] = useState<string>('America');
   const [email, setEmail] = useState<string>('');
 
   const locations: RegionLocations = {
-    Americas: [
+    America: [
       {
-        city: 'San Diego, California',
-        address: '4445 Eastgate Mall, Suite 200\n92121',
-        phone: '1-800-288-9659'
+        city: 'Cheyenne, WY 82002, US',
+        address: 'Herschler Building East, 122 W 25th St, Suites 100 & 101',
+        phone: '+130 74 41 3171'
       },
-      {
-        city: 'San Francisco, California',
-        address: '50 California St #1500\n94111',
-        phone: '1-800-288-9659'
-      },
-      {
-        city: 'Pittsburgh, Pennsylvania',
-        address: 'One Oxford Centre, 500 Grant St Suite 2900\n15219',
-        phone: '1-800-288-9659'
-      },
-      {
-        city: 'Durham, North Carolina',
-        address: 'RTP Meridian, 2530 Meridian Pkwy Suite 300\n27713',
-        phone: '1-800-288-9659'
-      },
-      {
-        city: 'San Jose, Costa Rica',
-        address: 'Escazú Corporate Centre, Piso 6\n40602',
-        phone: '1-800-288-9659'
-      }
+    
     ],
-    Europe: [
+    UAE: [
       {
-        city: 'London, United Kingdom',
-        address: '1 Knightsbridge Green\nSW1X 7QA',
-        phone: '+44 20 7123 4567'
+        city: 'Al Nahda 1, Dubai, UAE',
+        address: 'Office 318,  3rd Floor, Al Noor Building 1,',
+        phone: '+971 (0) 50 328 2209'
       },
-      {
-        city: 'Berlin, Germany',
-        address: 'Friedrichstrasse 95\n10117',
-        phone: '+49 30 1234 5678'
-      },
-      {
-        city: 'Paris, France',
-        address: '75 Avenue des Champs-Élysées\n75008',
-        phone: '+33 1 23 45 67 89'
-      }
     ],
     'Middle East': [
       {
         city: 'Dubai, UAE',
         address: 'Dubai Silicon Oasis\nDubai',
         phone: '+971 4 123 4567'
-      },
-      {
-        city: 'Tel Aviv, Israel',
-        address: 'Rothschild Boulevard 45\n6578403',
-        phone: '+972 3 123 4567'
       }
     ]
   };
